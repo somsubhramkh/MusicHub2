@@ -2,6 +2,7 @@ package musichub.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import musichub.model.Product;
 import musichub.service.ProductService;
 
-public class AdminController {
 
-	/*
+@Controller
+public class AdminController {
+	
+	
+
 	private ProductService productService;
 	 
 	@Autowired(required=true)
@@ -21,8 +25,8 @@ public class AdminController {
 	public void setProductService(ProductService ps){
 		this.productService = ps;
 	}
-     
-    @RequestMapping(value = "/ProductAdmin", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/ProductAdmin")
     public String listProducts(Model model) {
         model.addAttribute("product", new Product());
         model.addAttribute("listProducts", this.productService.listProducts());
@@ -30,7 +34,7 @@ public class AdminController {
     }
      
     
-    @RequestMapping(value= "/ProductAdmin/add", method = RequestMethod.POST)
+    @RequestMapping(value= "/ProductAdmin/add")
     public String addProduct(@ModelAttribute("product") Product p){
          
         if(p.getId() == 0){
@@ -58,6 +62,6 @@ public class AdminController {
         model.addAttribute("listProducts", this.productService.listProducts());
         return "ProductAdmin";
     }
-	*/
-	
+
+		
 }
