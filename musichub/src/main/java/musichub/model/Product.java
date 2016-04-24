@@ -7,15 +7,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
+
 @Entity
 public class Product{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
+	@NotEmpty(message="Brand cant be empty")
 	private String brand;
+	
+	@NotEmpty(message="Description cant be empty")
 	private String desc;
+	@NotEmpty(message="Name cant be empty")
 	private String name;
+	
+	@NotEmpty(message="Price cant be empty")
+	@Range(min=0,max=1000000,message="Price should be within the range of {min} and {max}")
 	private String price;
 	private String category;
 	

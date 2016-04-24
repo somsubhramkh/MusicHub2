@@ -239,6 +239,13 @@
     </dependency>
 
 
+<!-- Added to enable hibernate validation -->
+
+<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-validator</artifactId>
+	<version>5.2.4.Final</version>
+</dependency>
   
 
 
