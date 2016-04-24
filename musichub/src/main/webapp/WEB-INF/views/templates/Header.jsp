@@ -45,9 +45,9 @@ src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.js"></scrip
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
 <ul class="dropdown-menu">
 
-<li><a href="Product/guitar">Guitar</a></li>
-<li><a href="Product/base">Base</a></li>
-<li><a href="Product/amp">Amps</a></li>
+<li><a href="Product">Guitar</a></li>
+<li><a href="Product">Base</a></li>
+<li><a href="Product">Amps</a></li>
 
 </ul>
 </li>
@@ -56,7 +56,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.js"></scrip
           </ul>
 		  <ul class="nav navbar-nav navbar-right">
             <li class="active">
-              <a href="#" data-toggle="modal" data-target="#loginmodal">Sign In</a>
+              <a href="" data-toggle="modal" data-target="#loginmodal">Sign In</a>
 			  
             </li>
 			<li>

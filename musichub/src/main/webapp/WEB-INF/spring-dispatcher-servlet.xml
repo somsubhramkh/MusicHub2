@@ -13,7 +13,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd
 http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx.xsd
 http://www.springframework.org/schema/security
-http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+http://www.springframework.org/schema/security/spring-security.xsd">
 
 
 <!-- Controller -->
@@ -118,7 +118,11 @@ authorities-by-username-query="select u1.username, u2.role from user_authenticat
 </security:authentication-provider>
 </security:authentication-manager>
  
-	
+ 
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="1024000" />
+    </bean>
+ 
 </beans>
 
 

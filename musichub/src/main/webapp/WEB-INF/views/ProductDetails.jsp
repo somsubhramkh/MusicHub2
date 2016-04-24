@@ -6,11 +6,13 @@
 <!-- ========================================================================================================== -->
 <%@include file="/WEB-INF/views/templates/Header.jsp" %>
 
+
+
 <div class="section">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <img src=""
+            <img src="<c:url value='/resources/${param.id}.jpg' />"
             class="img-responsive">
           </div>
           <div class="col-md-6">
@@ -19,7 +21,7 @@
 <!-- Showing values taken from the request parameters -->
 <!-- ============================================================================================== -->
 
-              <li>Name:<%=request.getParameter("name")%></li>
+              <li>Name:"${param.name}"</li>
               <li>Description:<%=request.getParameter("desc")%></li>
               <li>Brand:<%=request.getParameter("brand")%></li>
               <li>Price:<%=request.getParameter("price")%></li>

@@ -6,12 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-public class Product{
+public class Product implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -29,6 +31,9 @@ public class Product{
 	@Range(min=0,max=1000000,message="Price should be within the range of {min} and {max}")
 	private String price;
 	private String category;
+	
+	@Transient
+	private MultipartFile image;
 	
 	public String getCategory() {
 		return category;
@@ -74,5 +79,11 @@ public class Product{
 	    public String toString(){
 	        return "id="+id+", brand="+brand+", desc="+desc+", name="+name+", price="+price;
 	    }
+	public MultipartFile getImage() {
+		return image;
+	}
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
 	
 }

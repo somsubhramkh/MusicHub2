@@ -11,7 +11,7 @@
  
 <c:url var="addAction" value="/ProductAdmin/add" ></c:url>
  
-<form:form action="${addAction}" commandName="product">
+<form:form action="${addAction}" commandName="product" enctype="multipart/form-data">
 <table>
    <c:if test="${!empty product.name}">
     <tr>
@@ -88,6 +88,19 @@
             <form:input path="category" />
         </td> 
     </tr>
+    
+    <tr>
+        <td>
+            <form:label path="image">
+                <spring:message text="Upload Image"/>
+            </form:label>
+        </td>
+        <td>
+            <form:input type="file" path="image" />
+        </td> 
+    </tr>
+    
+    
     <tr>
         <td colspan="2">
             <c:if test="${!empty product.name}">

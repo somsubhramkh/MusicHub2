@@ -93,6 +93,12 @@ public class HomeController {
     return "Login";
      
     }
+    
+    @RequestMapping("/ProductDetails")
+	public ModelAndView productDetailsPage(){
+		ModelAndView model=new ModelAndView("ProductDetails");
+		return model;
+    }
 
     
 	

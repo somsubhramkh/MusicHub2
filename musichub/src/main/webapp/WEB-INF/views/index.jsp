@@ -80,16 +80,16 @@
         </div>
         <div class="row">
           <div class="col-md-4">
-          <a href="Product/Guitar">
+          <a href="Product">
             <img src="<c:url value='/resources/images/category_guitar.JPG' />" class="center-block img-responsive img-thumbnail" ></a>
             <h3 class="text-center">Guitars</h3>
           </div>
           <div class="col-md-4">
-            <a href="Product/Base"><img src="<c:url value='/resources/images/category_base.JPG' />" class="center-block img-responsive img-thumbnail" ></a>
+            <a href="Product"><img src="<c:url value='/resources/images/category_base.JPG' />" class="center-block img-responsive img-thumbnail" ></a>
             <h3 class="text-center">Bass</h3>
           </div>
           <div class="col-md-4">
-            <a href="Product/Amp"><img src="<c:url value='/resources/images/category_amp.JPG' />" width="85%" class="center-block img-responsive img-thumbnail" ></a>
+            <a href="Product"><img src="<c:url value='/resources/images/category_amp.JPG' />" width="85%" class="center-block img-responsive img-thumbnail" ></a>
             <h3 class="text-center">Amps</h3>
           </div>
         </div>

@@ -98,7 +98,7 @@ angular.module('repeatSample', [])
 <!-- Info button that maps to the ProductDetails view. Required Info for ProductDetails view is passed through request parameters -->
 <!-- ============================================================================================== -->
 
-                                    <td><a href="ProductDetails?name={{product.name}}&desc={{product.desc}}&brand={{product.brand}}&price={{product.price}}"><i class="fa fa-3x fa-fw fa-exclamation-circle"></i></a></td>
+                                    <td><a href="ProductDetails?id={{product.id}}&name={{product.name}}&desc={{product.desc}}&brand={{product.brand}}&price={{product.price}}"><i class="fa fa-3x fa-fw fa-exclamation-circle"></i></a></td>
                                 </tr>
                             </tbody>
                         </table>
