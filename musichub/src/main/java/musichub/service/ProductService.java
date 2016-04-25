@@ -47,6 +47,11 @@ public class ProductService {
 	public Product getProductById(int id) {
 		return productDAO.getProductById(id);
 	}
+	
+	@Transactional
+	public List<Product> getProductByCategory(String category) {
+		return productDAO.getProductsByCategory(category);
+	}
 
 	
 	@Transactional

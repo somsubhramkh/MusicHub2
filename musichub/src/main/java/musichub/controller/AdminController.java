@@ -46,7 +46,7 @@ public class AdminController{
     public String listProducts(Model model) {
         model.addAttribute("product", new Product());
         model.addAttribute("listProducts", this.productService.listProducts());
-        return "ProductAdmin";
+        return "ProductAdmin2";
     }
      
     
@@ -109,7 +109,7 @@ public class AdminController{
        
 		if (result.hasErrors()) {
 			//ModelAndView model = new ModelAndView("/ProductAdmin");
-			return "ProductAdmin";
+			return "ProductAdmin2";
 		} else {
 			if (p.getId() == 0) {
 
@@ -136,7 +136,7 @@ public class AdminController{
     public String editProduct(@PathVariable("id") int id, Model model){
         model.addAttribute("product", this.productService.getProductById(id));
         model.addAttribute("listProducts", this.productService.listProducts());
-        return "ProductAdmin";
+        return "ProductAdmin2";
     }
 
 		

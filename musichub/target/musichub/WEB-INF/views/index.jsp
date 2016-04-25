@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -20,7 +19,7 @@
         <div class="item">
           <img  class="img-responsive" src="<c:url value='/resources/images/intl-home-slide-bassbreaker.jpg' />">
           <div class="carousel-caption">
-           <h2>BASEBREAKER GUITAR AMPLIFIER SERIES</h2>
+           <h2>BASSBREAKER GUITAR AMPLIFIER SERIES</h2>
             <p>A NEW GENERATION OF SOUND LAUNCHING</p>
           </div>
         </div>
@@ -80,16 +79,16 @@
         </div>
         <div class="row">
           <div class="col-md-4">
-          <a href="Product/Guitar">
+          <a href="/musichub/Product/Guitar">
             <img src="<c:url value='/resources/images/category_guitar.JPG' />" class="center-block img-responsive img-thumbnail" ></a>
             <h3 class="text-center">Guitars</h3>
           </div>
           <div class="col-md-4">
-            <a href="Product/Base"><img src="<c:url value='/resources/images/category_base.JPG' />" class="center-block img-responsive img-thumbnail" ></a>
+            <a href="/musichub/Product/Bass"><img src="<c:url value='/resources/images/category_base.JPG' />" class="center-block img-responsive img-thumbnail" ></a>
             <h3 class="text-center">Bass</h3>
           </div>
           <div class="col-md-4">
-            <a href="Product/Amp"><img src="<c:url value='/resources/images/category_amp.JPG' />" width="85%" class="center-block img-responsive img-thumbnail" ></a>
+            <a href="/musichub/Product/Amps"><img src="<c:url value='/resources/images/category_amp.JPG' />" width="85%" class="center-block img-responsive img-thumbnail" ></a>
             <h3 class="text-center">Amps</h3>
           </div>
         </div>

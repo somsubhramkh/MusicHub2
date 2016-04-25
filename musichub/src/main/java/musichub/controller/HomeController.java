@@ -76,6 +76,18 @@ public class HomeController {
 	}
 	
 	
+	@RequestMapping("/Product/{category}")
+	public ModelAndView productPageFilter(@PathVariable("category") String category)
+	{
+		
+		List<Product> products= productService.getProductByCategory(category);
+		String json=new Gson().toJson(products);
+		
+		ModelAndView model=new ModelAndView("Product");
+		model.addObject("prodData", json);
+		return model;
+	}
+	
 	
 	
 	/* Added for implementing Spring Security*/

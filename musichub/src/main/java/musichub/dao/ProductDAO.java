@@ -58,6 +58,19 @@ public class ProductDAO{
 		return productList;
 	}
 
+	
+	@SuppressWarnings("unchecked")
+
+	public List<Product> getProductsByCategory(String category) {
+		Session session = sessionFactory.getCurrentSession();
+		
+		List<Product> productList = session.createQuery("from Product p where p.category='"+category+"'").list();
+		for(Product p : productList){
+            logger.info("Product List::"+p);
+        }
+	
+		return productList;
+	}
 
 	public Product getProductById(int id) {
 		Session session = this.sessionFactory.getCurrentSession();		

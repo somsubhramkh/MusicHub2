@@ -1,6 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>    
     
  <div class="navbar navbar-default navbar-static-bottom">
       <footer class="section section-primary" style="background:black;color:white;width:100%;">
@@ -11,6 +20,17 @@
             <p>© 2016 MUSICHUB.COM
               <br>MusicHub India Private Limited
               <br>Bangalore</p>
+              <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           </div>
           <div class="col-sm-6">
             <p class="text-info text-right" style="color:white">
@@ -32,6 +52,7 @@
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </footer>

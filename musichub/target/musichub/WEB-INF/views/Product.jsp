@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
@@ -98,7 +97,7 @@ angular.module('repeatSample', [])
 <!-- Info button that maps to the ProductDetails view. Required Info for ProductDetails view is passed through request parameters -->
 <!-- ============================================================================================== -->
 
-                                    <td><a href="ProductDetails?name={{product.name}}&desc={{product.desc}}&brand={{product.brand}}&price={{product.price}}"><i class="fa fa-3x fa-fw fa-exclamation-circle"></i></a></td>
+                                    <td><a href="/musichub/ProductDetails?id={{product.id}}&name={{product.name}}&desc={{product.desc}}&brand={{product.brand}}&price={{product.price}}"><i class="fa fa-3x fa-fw fa-exclamation-circle"></i></a></td>
                                 </tr>
                             </tbody>
                         </table>

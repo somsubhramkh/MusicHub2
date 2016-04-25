@@ -1,17 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- Header file included which contains the menu -->
+<!-- ========================================================================================================== -->
+<%@include file="/WEB-INF/views/templates/Header.jsp" %>
+
 <h1>
     Add a Product
 </h1>
  
 <c:url var="addAction" value="/ProductAdmin/add" ></c:url>
  
-<form:form action="${addAction}" commandName="product">
+<form:form action="${addAction}" commandName="product" enctype="multipart/form-data">
 <table>
    <c:if test="${!empty product.name}">
     <tr>
@@ -35,6 +33,9 @@
         <td>
             <form:input path="brand" />
         </td> 
+        <td>
+            <form:errors path="brand" cssClass="error"/>
+        </td>
     </tr>
     <tr>
         <td>
@@ -44,6 +45,9 @@
         </td>
         <td>
             <form:input path="desc" />
+        </td>
+        <td>
+            <form:errors path="Desc" cssClass="error"/>
         </td>
     </tr>
     <tr>
@@ -55,6 +59,9 @@
         <td>
             <form:input path="name" />
         </td> 
+        <td>
+            <form:errors path="name" cssClass="error"/>
+        </td>
     </tr>
     <tr>
         <td>
@@ -65,6 +72,9 @@
         <td>
             <form:input path="price" />
         </td> 
+        <td>
+            <form:errors path="price" cssClass="error"/>
+        </td>
     </tr>
     <tr>
         <td>
@@ -76,6 +86,19 @@
             <form:input path="category" />
         </td> 
     </tr>
+    
+    <tr>
+        <td>
+            <form:label path="image">
+                <spring:message text="Upload Image"/>
+            </form:label>
+        </td>
+        <td>
+            <form:input type="file" path="image" />
+        </td> 
+    </tr>
+    
+    
     <tr>
         <td colspan="2">
             <c:if test="${!empty product.name}">
@@ -118,3 +141,7 @@
     </c:forEach>
     </table>
 </c:if>
+
+<!-- Header file included which contains the menu -->
+<!-- ========================================================================================================== -->
+<%@include file="/WEB-INF/views/templates/Footer.jsp" %>
