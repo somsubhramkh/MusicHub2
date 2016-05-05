@@ -5,6 +5,10 @@
 
 <br />
 <div class="row">
+
+<!-- Breadcrumb -->
+<!-- =========================================================================== -->
+
 	<div class="container">
 		<ul class="breadcrumb">
 			<li><a href="/musichub/">Home</a></li>

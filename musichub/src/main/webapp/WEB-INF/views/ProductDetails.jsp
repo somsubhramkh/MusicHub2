@@ -33,11 +33,14 @@
 					<!-- ============================================================================================== -->
 
 					<%-- <li>Name:"${param.name}"</li> --%>
-					<li>Description:<%=request.getParameter("desc")%></li>
-					<li>Brand:<%=request.getParameter("brand")%></li>
-					<li>Price:<%=request.getParameter("price")%></li>
-					<a class="btn btn-primary">Add to Cart</a>
+					<li><h4>Description:</h4><%=request.getParameter("desc")%></li>
+					<li><h4>Brand:</h4><%=request.getParameter("brand")%></li>
+					<li><h4>Price:</h4><%=request.getParameter("price")%></li>
+					<a class="btn btn-primary" type="submit" name="checkout" href="order">Add to
+						Cart</a>
+
 				</ul>
+
 
 			</div>
 

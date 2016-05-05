@@ -270,7 +270,91 @@
 	<version>3.1.0</version>
 </dependency>
 
+<!-- Added for Spring Webflow -->
+<!-- ================================================== -->
 
+    
+    <dependency>
+	<groupId>commons-beanutils</groupId>
+	<artifactId>commons-beanutils</artifactId>
+	<version>1.9.2</version>
+</dependency>
+    
+<dependency>
+	<groupId>commons-collections</groupId>
+	<artifactId>commons-collections</artifactId>
+	<version>3.2.2</version>
+</dependency>
+
+<dependency>
+	<groupId>commons-digester</groupId>
+	<artifactId>commons-digester</artifactId>
+	<version>2.1</version>
+</dependency>
+
+<dependency>
+	<groupId>javax.el</groupId>
+	<artifactId>el-api</artifactId>
+	<version>2.2</version>
+</dependency>
+
+
+<dependency>
+	<groupId>com.sun.el</groupId>
+	<artifactId>el-ri</artifactId>
+	<version>1.0</version>
+</dependency>
+
+
+<!-- <dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-aop</artifactId>
+	<version>4.2.5.RELEASE</version>
+</dependency>
+
+
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-asm</artifactId>
+	<version>3.1.4.RELEASE</version>
+</dependency>
+ -->
+
+
+
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-context-support</artifactId>
+	<version>4.2.5.RELEASE</version>
+</dependency>
+
+
+<dependency>
+	<groupId>org.springframework.webflow</groupId>
+	<artifactId>spring-binding</artifactId>
+	<version>2.4.2.RELEASE</version>
+</dependency>
+
+
+<dependency>
+	<groupId>org.springframework.webflow</groupId>
+	<artifactId>spring-js</artifactId>
+	<version>2.4.2.RELEASE</version>
+</dependency>
+
+<dependency>
+	<groupId>org.springframework.webflow</groupId>
+	<artifactId>spring-webflow</artifactId>
+	<version>2.4.2.RELEASE</version>
+</dependency>
+
+<dependency>
+	<groupId>net.sf.retrotranslator</groupId>
+	<artifactId>retrotranslator-runtime</artifactId>
+	<version>1.2.9</version>
+</dependency>
+
+    
   </dependencies>
   <build>
     <finalName>musichub</finalName>

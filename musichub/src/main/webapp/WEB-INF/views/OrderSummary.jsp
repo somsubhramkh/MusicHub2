@@ -8,12 +8,6 @@
 <br />
 <div class="section">
 	<div class="container">
-		<ul class="breadcrumb">
-			<li><a href="/musichub/">Home</a></li>
-			<li class="active">Product</a>
-			</li>
-
-		</ul>
 
 
 
@@ -25,12 +19,12 @@
 		%>
 
 
-
 		<!-- Angular script to generate the productlist and sorting -->
 		<!-- ============================================================================================== -->
 
 		<script>
-			var prod = ${prodData};
+			var prod = [{"id":82,"brand":"Fender","desc":"The American Special series Jazz Bas guitar puts genuine U.S-made Fender quality into the hands of players at any level","name":"AMERICAN SPECIAL JAZZ BASS","price":118000,"category":"Bass"},
+			            {"id":83,"brand":"Fender","desc":"The American Special series Jazz Bas guitar puts genuine U.S-made Fender quality into the hands of players at any level","name":"AMERICAN SPECIAL JAZZ BASS","price":118000,"category":"Bass"}];
 
 			angular.module('repeatSample', []).controller('repeatController',
 					function($scope) {
@@ -40,6 +34,15 @@
 							$scope.sortKey = keyname; //set the sortKey to the param passed
 							$scope.reverse = !$scope.reverse; //if true make it false and vice versa
 						}
+						
+						$scope.total = function() {
+					        var total = 0;
+					        angular.forEach($scope.products, function(product) {
+					            total += product.price;
+					        })
+
+					        return total;
+					    }
 
 					});
 		</script>
@@ -49,18 +52,12 @@
 
 		<div class="bs-component" ng-controller="repeatController">
 
-			<form class="form-inline">
-				<div class="form-group">
-					<label>Search</label> <input type="text" ng-model="search"
-						class="form-control" placeholder="Search">
-				</div>
-			</form>
 
 
 			<!-- table to show data coming from the JSON file -->
 			<!-- ============================================================================================== -->
 
-
+	<form:form>
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
@@ -84,7 +81,7 @@
 							class="glyphicon sort-icon" ng-show="sortKey=='category'"
 							ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
 						</th>
-						<th>More Info</th>
+						<th></th>
 
 					</tr>
 				</thead>
@@ -104,12 +101,19 @@
 						<!-- ============================================================================================== -->
 
 						<td><a
-							href="/musichub/ProductDetails?id={{product.id}}&name={{product.name}}&desc={{product.desc}}&brand={{product.brand}}&price={{product.price}}"><i
-								class="fa fa-3x fa-fw fa-exclamation-circle"></i></a></td>
+							href="/musichub/ProductDetails?id={{product.id}}&name={{product.name}}&desc={{product.desc}}&brand={{product.brand}}&price={{product.price}}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+					</tr>
+					<tr>
+					<td></td>
+					<td></td>
+					<td>Total:</td>
+					<td>{{total() | currency}}</td>
+					<td><input type="submit" class="btn btn-success" name="_eventId_orderSummaryChecked" value="Next"></td>
+					<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}" />
 					</tr>
 				</tbody>
 			</table>
-
+</form:form>
 		</div>
 	</div>
 </div>

@@ -23,95 +23,88 @@ import musichub.service.ProductService;
 
 @Controller
 public class HomeController {
-	
-	
+
 	private ProductService productService;
-	 
-	@Autowired(required=true)
-	@Qualifier(value="productService")
-	public void setProductService(ProductService ps){
+
+	@Autowired(required = true)
+	@Qualifier(value = "productService")
+	public void setProductService(ProductService ps) {
 		this.productService = ps;
 	}
-	 	
 
 	@RequestMapping("/")
-	public ModelAndView index()
-	{
-		ModelAndView model=new ModelAndView("index");
+	public ModelAndView index() {
+		ModelAndView model = new ModelAndView("index");
 		return model;
 	}
 	
-	@RequestMapping("/Register")
-	public ModelAndView registerPage()
-	{
-		ModelAndView model=new ModelAndView("Register");
-		return model;
-	}
-	
-	@RequestMapping("/AboutUs")
-	public ModelAndView aboutUsPage()
-	{
-		ModelAndView model=new ModelAndView("AboutUs");
-		return model;
-	}
-	
-	@RequestMapping("/ContactUs")
-	public ModelAndView contactUsPage()
-	{
-		ModelAndView model=new ModelAndView("ContactUs");
-		return model;
-	}
-	
-	
-	@RequestMapping("/Product")
-	public ModelAndView productPage()
-	{
+	@RequestMapping("/order")
+	public String checkout() {
 		
-		List<Product> products= productService.listProducts();
-		String json=new Gson().toJson(products);
-		
-		ModelAndView model=new ModelAndView("Product");
-		model.addObject("prodData", json);
-		return model;
-	}
-	
-	
-	@RequestMapping("/Product/{category}")
-	public ModelAndView productPageFilter(@PathVariable("category") String category)
-	{
-		
-		List<Product> products= productService.getProductByCategory(category);
-		String json=new Gson().toJson(products);
-		
-		ModelAndView model=new ModelAndView("Product");
-		model.addObject("prodData", json);
-		return model;
-	}
-	
-	
-	
-	/* Added for implementing Spring Security*/
-    
-    @RequestMapping(value="/login", method = RequestMethod.GET)
-    public String login(ModelMap model) {
-     
-    return "Login";
-     
-    }
-     
-    @RequestMapping(value="/loginError", method = RequestMethod.GET)
-    public String loginError(ModelMap model) {
-    model.addAttribute("error", "true");
-    return "Login";
-     
-    }
-    
-    @RequestMapping("/ProductDetails")
-	public ModelAndView productDetailsPage(){
-		ModelAndView model=new ModelAndView("ProductDetails");
-		return model;
-    }
 
-    
-	
+		return "redirect:/loginFlow";
+	}
+
+	@RequestMapping("/Register")
+	public ModelAndView registerPage() {
+		ModelAndView model = new ModelAndView("Register");
+		return model;
+	}
+
+	@RequestMapping("/AboutUs")
+	public ModelAndView aboutUsPage() {
+		ModelAndView model = new ModelAndView("AboutUs");
+		return model;
+	}
+
+	@RequestMapping("/ContactUs")
+	public ModelAndView contactUsPage() {
+		ModelAndView model = new ModelAndView("ContactUs");
+		return model;
+	}
+
+	@RequestMapping("/Product")
+	public ModelAndView productPage() {
+
+		List<Product> products = productService.listProducts();
+		String json = new Gson().toJson(products);
+
+		ModelAndView model = new ModelAndView("Product");
+		model.addObject("prodData", json);
+		return model;
+	}
+
+	@RequestMapping("/Product/{category}")
+	public ModelAndView productPageFilter(@PathVariable("category") String category) {
+
+		List<Product> products = productService.getProductByCategory(category);
+		String json = new Gson().toJson(products);
+
+		ModelAndView model = new ModelAndView("Product");
+		model.addObject("prodData", json);
+		return model;
+	}
+
+	/* Added for implementing Spring Security */
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(ModelMap model) {
+
+		return "Login";
+
+	}
+
+	@RequestMapping(value = "/loginError", method = RequestMethod.GET)
+	public String loginError(ModelMap model) {
+		model.addAttribute("error", "true");
+		return "Login";
+
+	}
+
+	@RequestMapping("/ProductDetails")
+	public ModelAndView productDetailsPage() {
+		ModelAndView model = new ModelAndView("ProductDetails");
+		return model;
+	}
+
 }

@@ -6,7 +6,8 @@
 <%@include file="/WEB-INF/views/templates/Header.jsp"%>
 
 
-	
+<!-- Carousel -->
+<!-- =============================================================================================== -->	
 <div id="fullcarousel-example" data-interval="3000"
 	class="carousel slide" data-ride="carousel">
 	<div class="carousel-inner" style="background: black;">
@@ -49,6 +50,9 @@
 			</div>
 		</div>
 	</div>
+	
+<!-- Carousel Control -->
+<!-- =============================================================================================================== -->	
 	<a class="left carousel-control" href="#fullcarousel-example"
 		data-slide="prev"><i class="icon-prev fa fa-angle-left"></i></a> <a
 		class="right carousel-control" href="#fullcarousel-example"
@@ -75,6 +79,10 @@
 				<p>AAA Figured Quilted MAPLE TOP—A work of art</p>
 			</div>
 			<div class="col-md-6">
+			
+			
+			<!-- Embedding a video from youtube -->
+			<!-- ======================================================================================= -->
 				<div class="embed-responsive embed-responsive-16by9">
 					<iframe width="560"
 						height="
@@ -87,6 +95,10 @@
 		</div>
 	</div>
 </div>
+
+<!-- Category Selectors -->
+<!-- ================================================================================================================ -->
+
 <div class="section">
 	<div class="container">
 		<div class="row">

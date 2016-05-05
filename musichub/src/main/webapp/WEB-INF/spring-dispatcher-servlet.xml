@@ -16,7 +16,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<!-- Controller -->
 	<!-- ============================================================================================= -->
-	<context:component-scan base-package="musichub.controller" />
+	<context:component-scan base-package="musichub" />
 
 
 	<!-- declares explicit support for annotation-driven MVC controllers (i.e. 
@@ -30,7 +30,9 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 	<mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>
 
 
-	<!-- Experimental block starts -->
+	<!-- Data Source Configuration -->
+	<!-- ================================================================================ -->
+
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="org.h2.Driver" />
@@ -40,6 +42,8 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 	</bean>
 
 
+	<!-- Creating the session factory bean -->
+	<!-- ========================================================================================== -->
 
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -62,12 +66,23 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 	</bean>
 
 
+	<!-- Beans of DAO and Service -->
+	<!-- ================================================================================ -->
+
 	<bean id="productDAO" class="musichub.dao.ProductDAO">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
 	<bean id="productService" class="musichub.service.ProductService">
 		<property name="productDAO" ref="productDAO"></property>
+	</bean>
+	
+	<bean id="customerDAO" class="musichub.dao.CustomerDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="customerService" class="musichub.service.CustomerService">
+		<property name="customerDAO" ref="customerDAO"></property>
 	</bean>
 
 
@@ -80,7 +95,6 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<!-- Experimental block ends -->
 
 	<!-- View Resolver -->
 	<!-- ============================================================================================= -->
@@ -123,19 +137,17 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		</security:authentication-provider>
 	</security:authentication-manager>
 
-<!-- for implementing multipart file -->
-<!-- ====================================================================================================== -->
+	<!-- for implementing multipart file -->
+	<!-- ====================================================================================================== -->
 
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="1024000" />
 	</bean>
 
+
+	
 </beans>
-
-
-
-
 
 
 

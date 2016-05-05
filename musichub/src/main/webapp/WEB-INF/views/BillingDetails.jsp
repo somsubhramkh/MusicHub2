@@ -5,6 +5,7 @@
 
 <div class="section">
       <div class="container">
+      <form:form>
         <div class="row">
           <form role="form">
             <div class="col-md-6">
@@ -60,9 +61,11 @@
                 <input class="form-control" type="text" placeholder="Enter Mobile">
               </div>
             </div>
-            <a class="btn btn-primary">next</a>
+            <input type="submit" class="btn btn-success" name="_eventId_billingAddressChecked" value="Next">
+         	<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}" />
           </form>
         </div>
+        </form:form>
       </div>
     </div>
     

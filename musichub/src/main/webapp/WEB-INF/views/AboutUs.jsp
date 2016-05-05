@@ -6,13 +6,22 @@
 <br />
 <div class="row">
 	<div class="container">
+	
+<!-- Breadcrumb -->
+<!-- =========================================================================== -->
+	
 		<ul class="breadcrumb">
 			<li><a href="/musichub/">Home</a></li>
 			<li class="active">About Us</a>
 			</li>
 
 		</ul>
+		
+		<!-- Company logo -->
+		<!-- ================================================================ -->
 		<img src="<c:url value='/resources/images/Logo.JPG'/>" width="300px">
+		
+		
 		<h4>ABOUT US</h4>
 		MusicHub is India's largest direct online retailer for musical
 		instruments and pro audio equipment. We also offer a wide range of
