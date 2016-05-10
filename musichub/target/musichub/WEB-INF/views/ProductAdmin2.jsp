@@ -1,18 +1,26 @@
 
 <!-- Header file included which contains the menu -->
 <!-- ========================================================================================================== -->
-<%@include file="/WEB-INF/views/templates/Header.jsp" %>
+<%@include file="/WEB-INF/views/templates/Header.jsp"%>
 
-<br/>
-<br/>
-<br/>
-<c:url var="addAction" value="/ProductAdmin/add" ></c:url>
+<br />
+<br />
+<br />
+<c:url var="addAction" value="/ProductAdmin/add"></c:url>
 
 <div class="section">
 	<div class="container">
+	
+	<!-- Breadcrumb -->
+		<ul class="breadcrumb">
+			<li><a href="/musichub/">Home</a></li>
+			<li class="active">ProductAdmin</a>
+			</li>
+
+		</ul>
 		<div class="row">
 			<div class="col-md-8 center">
-			<h1>Add New Product</h1>
+				<h1>Add New Product</h1>
 				<form:form class="form-horizontal" role="form" action="${addAction}"
 					commandName="product" enctype="multipart/form-data">
 
@@ -28,25 +36,29 @@
 					<div class="form-group">
 						<div class="col-sm-10">
 							<form:input type="text" class="form-control" path="brand"
-								placeholder="Brand" /><form:errors path="brand" cssClass="error"/>
+								placeholder="Brand" />
+							<form:errors path="brand" cssClass="error" />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-10">
 							<form:input type="text" class="form-control" path="desc"
-								placeholder="Description" /><form:errors path="desc" cssClass="error"/>
+								placeholder="Description" />
+							<form:errors path="desc" cssClass="error" />
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-10">
 							<form:input type="text" class="form-control" path="name"
-								placeholder="Name" /><form:errors path="name" cssClass="error"/>
+								placeholder="Name" />
+							<form:errors path="name" cssClass=" error"/>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-10">
 							<form:input type="text" class="form-control" path="price"
-								placeholder="Price" /><form:errors path="price" cssClass="error"/>
+								placeholder="Price" />
+							<form:errors path="price" cssClass="error" />
 						</div>
 					</div>
 					<div class="form-group">
@@ -87,7 +99,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-			<h1>Current Products Enlisted</h1>
+				<h1>Current Products Enlisted</h1>
 				<c:if test="${!empty listProducts}">
 					<table class="table">
 						<thead>
@@ -129,4 +141,4 @@
 
 <!-- Footer file -->
 <!-- ========================================================================================================== -->
-<%@include file="/WEB-INF/views/templates/Footer.jsp" %>
+<%@include file="/WEB-INF/views/templates/Footer.jsp"%>

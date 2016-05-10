@@ -19,6 +19,7 @@ import com.google.gson.Gson;
 
 import musichub.dao.ProductDAO;
 import musichub.model.Product;
+import musichub.model.User;
 import musichub.service.ProductService;
 
 @Controller
@@ -46,7 +47,8 @@ public class HomeController {
 	}
 
 	@RequestMapping("/Register")
-	public ModelAndView registerPage() {
+	public ModelAndView registerPage(Model m) {
+		m.addAttribute("user", new User());	
 		ModelAndView model = new ModelAndView("Register");
 		return model;
 	}

@@ -3,41 +3,51 @@
 
 <!-- Header file included which contains the menu -->
 <!-- ========================================================================================================== -->
-<%@include file="/WEB-INF/views/templates/Header.jsp" %>
+<%@include file="/WEB-INF/views/templates/Header.jsp"%>
 
-<br/>
-<br/>
-<br/>
+<br />
+<br />
+<br />
 
 
 <div class="section">
-      <div class="container">
-        <h1>${param.name}</h1>
-        <div class="row">
-        
-          <div class="col-md-6">
-            <img src="<c:url value='/resources/${param.id}.jpg' />"
-            class="img-responsive">
-          </div>
-          <div class="col-md-6">
-            <ul>
+	<div class="container">
+		<ul class="breadcrumb">
+			<li><a href="/musichub/">Home</a></li>
+			<li><a href="/musichub/Product">Product</a></li>
+			<li class="active">ProductDetails</a>
+			</li>
 
-<!-- Showing values taken from the request parameters -->
-<!-- ============================================================================================== -->
+		</ul>
+		<h1>${param.name}</h1>
+		<div class="row">
 
-              <%-- <li>Name:"${param.name}"</li> --%>
-              <li>Description:<%=request.getParameter("desc")%></li>
-              <li>Brand:<%=request.getParameter("brand")%></li>
-              <li>Price:<%=request.getParameter("price")%></li>
-              <a class="btn btn-primary">Add to Cart</a>
-            </ul>
-           
-          </div>
-           
-        </div>
-      </div>
-    </div>
+			<div class="col-md-6">
+				<img src="<c:url value='/resources/${param.id}.jpg' />"
+					class="img-responsive">
+			</div>
+			<div class="col-md-6">
+				<ul>
+
+					<!-- Showing values taken from the request parameters -->
+					<!-- ============================================================================================== -->
+
+					<%-- <li>Name:"${param.name}"</li> --%>
+					<li><h4>Description:</h4><%=request.getParameter("desc")%></li>
+					<li><h4>Brand:</h4><%=request.getParameter("brand")%></li>
+					<li><h4>Price:</h4><%=request.getParameter("price")%></li>
+					<a class="btn btn-primary" type="submit" name="checkout" href="order">Add to
+						Cart</a>
+
+				</ul>
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
 
 <!-- Footer JSP file included -->
 <!-- ===================================================================================================================== -->
-<%@include file="/WEB-INF/views/templates/Footer.jsp" %>
+<%@include file="/WEB-INF/views/templates/Footer.jsp"%>

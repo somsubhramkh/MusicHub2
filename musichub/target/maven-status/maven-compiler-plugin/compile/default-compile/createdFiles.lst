@@ -1,6 +1,10 @@
+musichub\controller\CustomerController.class
+musichub\model\Customer.class
+musichub\controller\HomeController.class
+musichub\service\CustomerService.class
+musichub\dbutil\DbUtil.class
 musichub\dao\ProductDAO.class
 musichub\service\ProductService.class
 musichub\controller\AdminController.class
-musichub\controller\HomeController.class
-musichub\dbutil\DbUtil.class
+musichub\dao\CustomerDAO.class
 musichub\model\Product.class
