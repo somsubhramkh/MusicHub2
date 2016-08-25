@@ -51,7 +51,7 @@ cartApp.controller("addToCartCtrl", function ($scope, $http){
 	 * refreshCartItems method is called by others methods in same controller to refresh the cart
 	 */
     $scope.refreshCartItems = function () {
-        $http.get('http://localhost:8080/musichub/usercart/cart/refreshCart/1').success(function (data) {
+        $http.get('http://localhost:8080/musichub/usercart/cart/refreshCart/'+$scope.cartId).success(function (data) {
            $scope.cart=data;
         });
     };

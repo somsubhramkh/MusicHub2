@@ -46,11 +46,12 @@
 
 					});
 		</script> -->
+		
 
 		<!-- Textbox used to implement search option using Angular -->
 		<!-- ============================================================================================== -->
 
-		<div class="bs-component" ng-controller="addToCartCtrl" ng-init="retrieveCart('1')">
+		<div class="bs-component" ng-controller="addToCartCtrl" ng-init="retrieveCart(${order.cart.cartId})">
 
 
 

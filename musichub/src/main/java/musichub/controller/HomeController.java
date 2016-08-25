@@ -1,5 +1,6 @@
 package musichub.controller;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Properties;
 
@@ -28,9 +29,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 
 import musichub.dao.ProductDAO;
+import musichub.model.BillingAddress;
 import musichub.model.Product;
 import musichub.model.User;
 import musichub.service.ProductService;
+import musichub.service.UserService;
 
 @Controller
 public class HomeController {
@@ -42,6 +45,14 @@ public class HomeController {
 	public void setProductService(ProductService ps) {
 		this.productService = ps;
 	}
+	
+	private UserService userService;
+
+	@Autowired(required = true)
+	@Qualifier(value = "userService")
+	public void setUserService(UserService us) {
+		this.userService = us;
+	}
 
 	@RequestMapping("/")
 	public ModelAndView index() {
@@ -50,14 +61,17 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/order")
-	public String checkout() {
+	public String checkout(Principal p) {
 		
-
-		return "redirect:/loginFlow";
+		User user=userService.getUserByUsername(p.getName());
+		return "redirect:/loginFlow?cartId="+user.getCart().getCartId();
 	}
 
 	@RequestMapping("/Register")
 	public ModelAndView registerPage(Model m) {
+		BillingAddress billingAddress=new BillingAddress();
+		User user=new User();
+		user.setBillingAddress(billingAddress);
 		m.addAttribute("user", new User());	
 		ModelAndView model = new ModelAndView("Register");
 		return model;

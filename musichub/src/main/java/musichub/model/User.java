@@ -2,6 +2,7 @@ package musichub.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -38,13 +39,13 @@ public class User implements Serializable{
 	
 	private boolean enabled;
 	
-	@OneToOne
+	@OneToOne(cascade={CascadeType.ALL})
     @JoinColumn(name = "cartId")
     @JsonIgnore
     private Cart cart;
 	
 	
-	@OneToOne
+	@OneToOne(cascade={CascadeType.ALL})
     @JoinColumn(name="billingAddressId")
     private BillingAddress billingAddress;
 

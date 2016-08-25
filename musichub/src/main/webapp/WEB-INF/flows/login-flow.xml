@@ -7,7 +7,7 @@ http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 <var name="order" class="musichub.model.UserOrder"/>
 
 <action-state id="orderProcess">
-        <evaluate expression="cartDAO.validate(1)" result="order.cart" />
+        <evaluate expression="cartDAO.validate(requestParameters.cartId)" result="order.cart" />
         <!-- <evaluate expression="cartDAO.getBillingAddress(1)" result="order.cart.user.billingAddress" /> -->
         <transition to="orderSummaryForm" />
     </action-state>

@@ -39,6 +39,7 @@ public class UserController {
 		if(result.hasErrors())
 			return "Register";
 		
+		
 		userService.addUser(u);
 		return "redirect:/";
 		}

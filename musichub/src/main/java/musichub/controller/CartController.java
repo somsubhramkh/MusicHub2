@@ -73,6 +73,7 @@ public class CartController {
         item.setQuantity(1);
         item.setTotalPrice(product.getPrice()*item.getQuantity());
         item.setCart(cart);
+        
         itemService.addItem(item);
     }
     /*

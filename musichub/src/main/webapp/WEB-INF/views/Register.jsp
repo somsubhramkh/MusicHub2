@@ -58,6 +58,51 @@
 						</div>
 						<form:input type="hidden" path="enabled" value="TRUE"/>
 							<form:input type="hidden" path="role" value="ROLE_USER"/>
+							
+						<div class="form-group">
+							<div class="col-sm-2">
+								<label for="address" class="control-label">Address</label>
+							</div>
+							<div class="col-sm-10">
+								<form:input path="billingAddress.address" type="text" class="form-control" id="inputPassword"
+									placeholder="Address" />
+									<form:errors path="billingAddress.address" cssClass="error" />
+							</div>
+						</div>
+						
+						
+						<div class="form-group">
+							<div class="col-sm-2">
+								<label for="city" class="control-label">City</label>
+							</div>
+							<div class="col-sm-10">
+								<form:input path="billingAddress.city" type="text" class="form-control" id="inputPassword"
+									placeholder="City" />
+									<form:errors path="billingAddress.city" cssClass="error" />
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-sm-2">
+								<label for="zipCode" class="control-label">Pin</label>
+							</div>
+							<div class="col-sm-10">
+								<form:input path="billingAddress.zipCode" type="text" class="form-control" id="inputPassword"
+									placeholder="Pin" />
+									<form:errors path="billingAddress.zipCode" cssClass="error" />
+							</div>
+						</div>	
+						
+						<div class="form-group">
+							<div class="col-sm-2">
+								<label for="mobileNo" class="control-label">Mobile No.</label>
+							</div>
+							<div class="col-sm-10">
+								<form:input path="billingAddress.mobileNo" type="text" class="form-control" id="inputPassword"
+									placeholder="Mobile No." />
+									<form:errors path="billingAddress.mobileNo" cssClass="error" />
+							</div>
+						</div>
 
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">

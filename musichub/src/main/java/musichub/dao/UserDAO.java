@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import musichub.model.Cart;
 import musichub.model.Product;
 import musichub.model.User;
 
@@ -28,6 +29,9 @@ public class UserDAO {
 
 	public void addUser(User u) {
 		Session session = this.sessionFactory.getCurrentSession();
+		Cart cart=new Cart();
+		u.setCart(cart);
+		cart.setUser(u);
 		session.persist(u);
 		logger.info("User saved successfully, User Details=" + u);
 
