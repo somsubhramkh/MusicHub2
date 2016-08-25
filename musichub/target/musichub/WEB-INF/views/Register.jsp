@@ -24,14 +24,15 @@
 					<img src="${images}/Logo.JPG" width="300px" class="img-responsive">
 				</div>
 				<div class="col-md-8">
-					<form class="form-horizontal" role="form">
+					<form:form class="form-horizontal" role="form" action="/musichub/user/add" commandName="user" method="post">
 						<div class="form-group">
 							<div class="col-sm-2">
 								<label for="name" class="control-label">Name</label>
 							</div>
 							<div class="col-sm-10">
-								<input type="name" class="form-control" id="inputName"
-									placeholder="Enter name">
+								<form:input type="text" path="name" class="form-control" id="inputName"
+									placeholder="Enter name" />
+									<form:errors path="name" cssClass="error" />
 							</div>
 						</div>
 						<div class="form-group">
@@ -39,35 +40,31 @@
 								<label for="email" class="control-label">Email</label>
 							</div>
 							<div class="col-sm-10">
-								<input type="email" class="form-control" id="inputEmail"
-									placeholder="Email">
+								<form:input path="email" type="email" class="form-control" id="inputEmail"
+									placeholder="Email" />
+									<form:errors path="email" cssClass="error" />
 							</div>
 						</div>
+						
 						<div class="form-group">
 							<div class="col-sm-2">
 								<label for="password" class="control-label">Password</label>
 							</div>
 							<div class="col-sm-10">
-								<input type="password" class="form-control" id="inputPassword"
-									placeholder="Password">
+								<form:input path="password" type="password" class="form-control" id="inputPassword"
+									placeholder="Password" />
+									<form:errors path="password" cssClass="error" />
 							</div>
 						</div>
-						<div class="form-group">
-							<div class="col-sm-2">
-								<label for="cpassword" class="control-label">Confirm</label>
-							</div>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" id="inputCpassword"
-									placeholder="Confirm Password">
-							</div>
-						</div>
+						<form:input type="hidden" path="enabled" value="TRUE"/>
+							<form:input type="hidden" path="role" value="ROLE_USER"/>
 
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								<button type="submit" class="btn btn-default">Register</button>
 							</div>
 						</div>
-					</form>
+					</form:form>
 				</div>
 			</div>
 		</div>

@@ -21,7 +21,7 @@
 		<h4>CONTACT US</h4>
 		<address>
 			<strong>MusicHub Inc.</strong><br> 007 street<br> Brigade
-			Road, Bengaluru<br> <abbr title="Phone">P:</abbr> (91) 456-7890
+			Boulevard, NY<br> <abbr title="Phone">P:</abbr> 1800 111 2222
 		</address>
 		<address>
 			<a href="mailto:#">info@musichub.com</a>

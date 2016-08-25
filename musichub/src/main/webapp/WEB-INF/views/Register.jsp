@@ -56,7 +56,8 @@
 									<form:errors path="password" cssClass="error" />
 							</div>
 						</div>
-							<form:input type="hidden" path="role" value="user"/>
+						<form:input type="hidden" path="enabled" value="TRUE"/>
+							<form:input type="hidden" path="role" value="ROLE_USER"/>
 
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">

@@ -7,10 +7,14 @@ import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import musichub.model.Product;
 import musichub.model.User;
 
+@Repository
+@Transactional
 public class UserDAO {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserDAO.class);
@@ -55,6 +59,19 @@ public class UserDAO {
 		logger.info("User loaded successfully, User details=" + u);
 		return u;
 	}
+	
+	public User getUserByUsername(String username) {
+		Session session = sessionFactory.getCurrentSession();
+
+		List<User> users = session.createQuery("from User u where u.email='" + username + "'").list();
+		User user=users.get(0);
+		
+			logger.info("user Details retrieved successfully, User Details::" + user);
+		
+
+		return user;
+	}
+	
 
 	public void removeUser(int id) {
 		Session session = this.sessionFactory.getCurrentSession();

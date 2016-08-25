@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
@@ -27,9 +28,9 @@ public class Product implements Serializable {
 	@NotEmpty(message = "Name cant be empty")
 	private String name;
 
-	@NotEmpty(message = "Price cant be empty")
+	@NotNull(message = "Price cant be empty")
 	@Range(min = 0, max = 1000000, message = "Price should be within the range of {min} and {max}")
-	private String price;
+	private int price;
 
 	private String category;
 
@@ -80,11 +81,11 @@ public class Product implements Serializable {
 		this.name = name;
 	}
 
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

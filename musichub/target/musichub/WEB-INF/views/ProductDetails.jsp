@@ -11,7 +11,7 @@
 
 
 <div class="section">
-	<div class="container">
+	<div class="container" ng-app = "addToCartApp">
 		<ul class="breadcrumb">
 			<li><a href="/musichub/">Home</a></li>
 			<li><a href="/musichub/Product">Product</a></li>
@@ -26,7 +26,7 @@
 				<img src="<c:url value='/resources/${param.id}.jpg' />"
 					class="img-responsive">
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6" ng-controller="addToCartCtrl">
 				<ul>
 
 					<!-- Showing values taken from the request parameters -->
@@ -36,8 +36,12 @@
 					<li><h4>Description:</h4><%=request.getParameter("desc")%></li>
 					<li><h4>Brand:</h4><%=request.getParameter("brand")%></li>
 					<li><h4>Price:</h4><%=request.getParameter("price")%></li>
-					<a class="btn btn-primary" type="submit" name="checkout" href="order">Add to
+					
+					<!-- <a class="btn btn-primary" type="submit" name="checkout" href="order">Add to
 						Cart</a>
+						 -->
+					<a class="btn btn-primary" ng-click="addItemToCart('<%=request.getParameter("id")%>')" href="order">Add to
+						Cart</a>	
 
 				</ul>
 
@@ -48,6 +52,7 @@
 	</div>
 </div>
 
+ <script src="<c:url value="/resources/js/ordercontroller.js" /> "></script>
 <!-- Footer JSP file included -->
 <!-- ===================================================================================================================== -->
 <%@include file="/WEB-INF/views/templates/Footer.jsp"%>

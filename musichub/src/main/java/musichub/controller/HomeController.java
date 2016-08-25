@@ -1,6 +1,16 @@
 package musichub.controller;
 
 import java.util.List;
+import java.util.Properties;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -106,6 +116,54 @@ public class HomeController {
 	@RequestMapping("/ProductDetails")
 	public ModelAndView productDetailsPage() {
 		ModelAndView model = new ModelAndView("ProductDetails");
+		return model;
+	}
+	
+	@RequestMapping("/Share")
+	public String sharePage() {
+		//ModelAndView model = new ModelAndView("Share");
+		return "Share";
+	}
+	
+	@RequestMapping("/sendMail")
+	public ModelAndView sendMail(HttpServletRequest request) {
+		
+		final String username = "som.musichub@gmail.com";
+		final String password = "transformation";
+
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+
+		Session session = Session.getInstance(props,
+		  new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		  });
+
+		try {
+
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress("from-email@gmail.com"));
+			message.setRecipients(Message.RecipientType.TO,
+				InternetAddress.parse(request.getParameter("email")));
+			message.setSubject(request.getParameter("subject"));
+			message.setText(request.getParameter("content"));
+
+			Transport.send(message);
+
+			System.out.println("Done");
+
+		} catch (MessagingException e) {
+			throw new RuntimeException(e);
+		}
+
+		
+		
+		ModelAndView model = new ModelAndView("Share");
 		return model;
 	}
 

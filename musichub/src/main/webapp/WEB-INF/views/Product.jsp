@@ -6,7 +6,7 @@
 <!-- ========================================================================================================== -->
 <%@include file="/WEB-INF/views/templates/Header.jsp"%>
 <br />
-<div class="section">
+<div  ng-app="repeatSample" class="section">
 	<div class="container">
 		<ul class="breadcrumb">
 			<li><a href="/musichub/">Home</a></li>

@@ -19,7 +19,7 @@
 			<div class="col-sm-6">
 				<h1>MusicHub</h1>
 				<p>
-					© 2016 MUSICHUB.COM <br>MusicHub India Private Limited <br>Bangalore
+					© 2016 MUSICHUB.COM <br>MusicHub Inc <br>NY<br>USA
 				</p>
 				<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 				<br />

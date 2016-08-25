@@ -4,7 +4,7 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html ng-app="repeatSample" ng-init="cat='Guitar'">
+<html>
 <head>
 <spring:url value="/resources/images" var="images"></spring:url>
 <meta charset=utf-8>

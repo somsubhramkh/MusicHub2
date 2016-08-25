@@ -48,4 +48,11 @@ public class UserService {
 		this.userDAO.removeUser(id);
 	}
 
+	public musichub.model.User getUserByUsername(String username) {
+		// TODO Auto-generated method stub
+		return userDAO.getUserByUsername(username);
+	}
+	
+	
+
 }
